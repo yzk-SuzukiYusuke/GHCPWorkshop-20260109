@@ -112,23 +112,31 @@ describe('FizzBuzz', () => {
     });
 
     test('should throw error for negative number', () => {
-      expect(() => fizzBuzz(-1)).toThrow('n must be a positive integer');
+      expect(() => fizzBuzz(-1)).toThrow('Expected positive integer');
     });
 
     test('should throw error for zero', () => {
-      expect(() => fizzBuzz(0)).toThrow('n must be a positive integer');
+      expect(() => fizzBuzz(0)).toThrow('Expected positive integer');
     });
 
     test('should throw error for non-integer', () => {
-      expect(() => fizzBuzz(3.5)).toThrow('n must be a positive integer');
+      expect(() => fizzBuzz(3.5)).toThrow('Expected integer');
     });
 
     test('should throw error for string', () => {
-      expect(() => fizzBuzz('abc')).toThrow('n must be a positive integer');
+      expect(() => fizzBuzz('abc')).toThrow('Expected number');
     });
 
     test('should throw error for null', () => {
-      expect(() => fizzBuzz(null)).toThrow('n must be a positive integer');
+      expect(() => fizzBuzz(null)).toThrow('Expected number');
+    });
+
+    test('should throw error for NaN', () => {
+      expect(() => fizzBuzz(NaN)).toThrow('must be finite');
+    });
+
+    test('should throw error for Infinity', () => {
+      expect(() => fizzBuzz(Infinity)).toThrow('must be finite');
     });
 
     test('should use default value 20 when called without argument', () => {
