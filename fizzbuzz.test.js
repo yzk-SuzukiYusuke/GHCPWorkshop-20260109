@@ -132,10 +132,12 @@ describe('FizzBuzz', () => {
     });
 
     test('should throw error for NaN', () => {
+      expect(() => fizzBuzz(NaN)).toThrow(RangeError);
       expect(() => fizzBuzz(NaN)).toThrow('must be finite');
     });
 
     test('should throw error for Infinity', () => {
+      expect(() => fizzBuzz(Infinity)).toThrow(RangeError);
       expect(() => fizzBuzz(Infinity)).toThrow('must be finite');
     });
 
